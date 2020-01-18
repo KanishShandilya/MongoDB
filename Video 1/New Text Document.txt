@@ -19,6 +19,8 @@ insertMany() is method which insert multiple data
 
 We need to be careful while naming collection
  'studentData' because if we even change case 
+ it will represent different collection of our
+ database.
 
 4.db.studentData.find()
 
