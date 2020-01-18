@@ -1,0 +1,30 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+
+1. show dbs->All database being created in this system
+
+2. use databasename
+switched to db databasename
+after this even if we run show dbs ,it will not show 
+database we just created,until we donot add some 
+collection in our database it will not create our database.
+
+3.db.studentData.insertOne({
+	"name":"Kanish",
+	"email":"kanishshandilya@gmail.com",
+})
+
+studentData is collection name
+insertOne() is method which insert one bson data
+insertMany() is method which insert multiple data
+
+We need to be careful while naming collection
+ 'studentData' because if we even change case 
+
+4.db.studentData.find()
+
+studentData is collection
+find() will give all the data present in our database
+in collection
+db.studentData.find().pretty() will show data
+ in more readable format.
+it will denote different collection of our database.
