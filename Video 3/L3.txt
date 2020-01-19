@@ -1,0 +1,29 @@
+Three A who uses MONGODB-
+1. Application
+2. Analytics
+3. Admin
+
+------------------------------------------------------------------------
+C -Create
+R-Read
+U-Update
+D-Delete
+---------------------
+CREATE
+insertOne(data,options)
+insertMany(data,options)
+-------------------------------------------------------------------------
+READ
+find(filter,options)
+findOne(filter,options)-Return first thing that matches
+the criterion(Not only one but First One).
+
+-------------------------------------------------------------------------
+UPDATE
+updateOne(filter,data,options)
+updateMany(filter,data,options)
+replaceOne(filter,data,options)
+--------------------------------------------------------------------------
+DELETE
+deleteOne(filter,options)
+deleteMany(filter,options)
