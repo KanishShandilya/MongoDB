@@ -29,4 +29,3 @@ find() will give all the data present in our database
 in collection
 db.studentData.find().pretty() will show data
  in more readable format.
-it will denote different collection of our database.
