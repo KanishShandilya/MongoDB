@@ -1,0 +1,38 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+----------------------------------------------------------------------
+->	Using deleteOne
+In deleteOne() we pass params through which we can uni-
+quely identify the data.
+
+db.studentData.deleteOne({email:"mayank@gmail.com"})
+
+To confirm delete it will show-
+   {"acknowledged":true,"deletedCount":1}
+--------------------------------------------------
+Insert One data
+db.studentData.insertOne({
+	name:"Mayank",
+	email:"mayank@gmail.com",
+	contact:"37746"
+})
+-------------------------------------------------
+->	Using updateOne
+For updateOne we need to pass two things-
+=>How uniquely we are going to find it
+=>What we want to update
+
+db.studentData.updateOne({courseCount:4},
+		            {fbloggedIn:"yes"})
+couseCount is unique feild to identify
+fbloggedIn is what we want to update
+
+When we run above commands we get an error-
+->must contain atomic operator
+
+To overcome this error run following commands-
+db.studentData.updateOne({courseCount:4,
+		            {$set: {fbloggedIn:'yes'}})
+
+
+To confirm update it shows-
+{"acknowledged":true,"matchedCount":1,"modifiedCount":1}
