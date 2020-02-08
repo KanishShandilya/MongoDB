@@ -1,0 +1,48 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+
+-----------------------------------------------------------
+* Using updateMany()
+	It takes two parameters-
+		i)How to identify things to be updated
+		ii)What to change
+
+	Command-
+	db.collection_name.updateMany({_id:'yrgfcye'},
+			{$set :{delte:'yes}})
+	If successful acknoeledge,matchedCount
+	 and modified will be shown.
+
+-------------------------------------------------------------
+* Using deleteMany()
+	It takes one parameter-
+		i)How to identify record to delete
+	Command-
+	db.studentData.deleteMany({dele:'yes'})
+	
+	If successful acknowledged and deletecount will
+	be displayed.
+----------------------------------------------------------------
+* Using insertmany()
+	It takes an array of JSON Object.
+	Command-
+	db.studentData.insertmany([
+{
+	"name": "Kanish",
+	"email": "kanish@kanishshandilya.com",
+	"contact": "11111111111",
+	"courseCount": 4,
+	"isVerified": true
+},
+{
+	"name": "Mark",
+	"email": "mark@example.com",
+	"contact": "9999999888",
+	"courseCount": 2,
+	"isVerified": false
+}
+])
+
+	You will get acknowleged and object id's of 
+	inserted data.
+-----------------------------------------------------------------------------
+Be careful with bulk data.
