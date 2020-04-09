@@ -1,0 +1,30 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+
+------------------------------------------------------------------------------------------------------------
+* While using db.collection_name.find() we can also selectively select
+   data to be shown by passing parameter about which we want to select.
+	This can be done as follows-
+		db.collection_name.find({courseCount:4}).pretty()
+	The above statement will return all values containing data courseCount:4
+
+
+WE can also use db.collection.findOne({params:value})->It will return only first value 
+while .find({params:value}) will return all values.
+
+----------------------------------------------------------------------------------------------------------------------
+
+* If we want to find data based on conditions then,
+	db.collection.find({courseCount:{$gt : 2}})
+	db.collection.find({courseCount:{$lt : 4}})
+Here, gt and lt are atomic operator meaning greater than and less than
+
+------------------------------------------------------------------------------------------------------------------------
+
+* We can also use update command in mongo db i.e,
+	db.collection.update({finding : criterion},{update :value})
+	
+The problem with this is that it will update all values i.e, if we want to update all values we will use this 
+else it will remove all elements in the object and will keep and update only those values which was 
+passed. 
+
+We donot use atomic operator $set :{} in update
