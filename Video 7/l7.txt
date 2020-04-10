@@ -1,0 +1,16 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+
+-------------------------------------------------------------------------------------
+To delete all-
+	db.collection.deleteMany({})
+
+-------------------------------------------------------------------------------------
+
+db.collection.find() works only on shell and when we fetch data with
+it it doesn't show all data at a time.
+
+In order to use find() as drivers(i.e with programming language) we need-
+db.collection.find.forEach( (object) => {printjson(object)})
+
+The above code loops over all data in database and prints it for us.
+We use forEach loop and an callback function(arrow function) for that.
