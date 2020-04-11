@@ -1,0 +1,42 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+
+-----------------------------------------------------------------------------
+
+Optimizing Bandwidth
+------------------------------------------------------
+
+Cursor
+----------
+When we try to get information from database it doesn't come 
+directly to us until we say so.Information comes as a meta file(cursor).
+This meta file contains information about our information that we got from 
+database. 
+We get cursor from database not actual info until we ask it.
+When we execute db.collection.find() we get a cursor not actual data.
+
+-----------------------------------------------------------------------------------------------------
+If we only wanted to printa specific value of all data-
+db.collection.find.forEach( (obj) =>{printjson(obj.att)}) 
+
+Even for a specific value this is a costly operation because
+once we execute that command all the data arefetched and are put
+ in cursor and then we are looping through whole objects to get email.
+(There is no need of getting everything from database)
+
+To make this operation cost efficient we will pass some parameters to .find()
+function-
+(i) It provides condition for extracting data like where clause in sql
+(ii) Second parameter is what are info. that should be returned by database
+By default it is everything , but we can overwrite it.
+We can make attributes we want to fetch as 1 and leave rest which will be 
+by default 0. _id will by default be 1.
+
+db.collection.find({},{att:1})
+This statement will return _id and attribute set to 1
+
+db.collection.find({},{att:1,_id:0,att1:1})
+will not return _id and return att and att1
+
+
+To convert returned things to array
+db.collection.find({},{att:1,_id:0,att1:1}).toArray()
