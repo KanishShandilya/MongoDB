@@ -1,0 +1,20 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+
+-----------------------------------------------------------------------------------
+We can also store value in form of object like-
+key: {
+small:546,
+med:23,
+large:123
+}
+
+db.collection.insertOne({key:{small:546,
+med:23,
+large:123}})
+
+To access data we use-
+db.collection.find({"key.med":23})
+
+Above key.med must be in "".
+
+
