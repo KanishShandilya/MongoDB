@@ -1,0 +1,10 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
+-----------------------------------------------------------------------------------
+
+To insert array of things we can-
+db.collection.insertOne({key:["s1","s2","s3"]})
+db.collection.insertOne({key:[{k1:v1},{k2:v2},{k3:v3}]})
+
+To acess objects Inside:
+	db.collection.find({att:'value'},{key:1})
+	db.collection.find({att:'value'},{key.k1:1})
